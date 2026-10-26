@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
+
+@property --inline-size-s {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+@property --inline-size-m {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+@property --inline-size-l {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+:root {
+  --azul: 232;
+
+  --branco: hsl(0, 0%, 100%);
+
+  --transition: all 0.3s ease;
+
+  --breakpoint-s: 576px;
+  --inline-size-s: max(var(--breakpoint-s), 100vi);
+
+  --breakpoint-m: 768px;
+  --inline-size-m: max(var(--breakpoint-m), 100vi);
+
+  --breakpoint-l: 1200px;
+  --inline-size-l: max(var(--breakpoint-l), 100vi);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
