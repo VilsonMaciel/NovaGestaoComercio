@@ -1,0 +1,33 @@
+.botao{
+    height: 40px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background: var(--degrade-botao);
+    color: var(--branco);
+    transition: background-color 0.3s, transform 0.1s, filter 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    &:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+.botao--cancelar{
+
+}
+.botao--salvar{
+
+}
