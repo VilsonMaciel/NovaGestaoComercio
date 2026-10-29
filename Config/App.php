@@ -2,8 +2,8 @@
 
 return [
     'app_name' => 'PHP Basic Boilerplate',
-    'app_url' => 'http://localhost/novagestao',
-    'base_folder' => '/novagestao/',
+    'app_url' => 'http://localhost/NovaGestaoComercio',
+    'base_folder' => '/NovaGestaoComercio/',
 
     'db' => [
         'host' => 'localhost',
