@@ -1,31 +1,4 @@
-:root {
-    --roxo-primario: #422F8E;
-    --roxo-hover: #342275;
-    --roxo-ativo: #28175E;
 
-    --roxo-escuro: #311B68;
-    --roxo-escuro-hover: #241252;
-
-    --tabela-cabecalho: #1E1E1E;
-    --cor-linha-azul: #DBE8FF;
-    --cor-linha-azul-hover: #CFE0FF;
-    --cor-linha-roxa: #EED8FF;
-    --cor-linha-roxa-hover: #E4C8FF;
-
-    --branco: #FFFFFF;
-    --fundo-pagina: #FFFFFF;
-    --texto-principal: #1E1E1E;
-    --texto-secundario: #5A5C69;
-    --texto-suave: #858796;
-    --cinza-borda: #D8DCE6;
-
-    --cor-perigo: #D32F2F;
-    --cor-perigo-fundo: rgba(211, 47, 47, 0.1);
-
-    --sombra-dropdown: 0 10px 25px rgba(25, 10, 50, 0.2);
-    --sombra-card: 0 4px 14px rgba(66, 47, 142, 0.12);
-    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
 
 body {
     background-color: var(--fundo-pagina);

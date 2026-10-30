@@ -33,7 +33,7 @@
                     Cadastrar Usuário
                 </a>
                 <hr class="menu__divisor">
-                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>login" class="menu__item">
+                
                     <span class="material-symbols-outlined">logout</span>
                     Sair
                 </a>
