@@ -23,7 +23,8 @@
 :root {
   --azul: #23357A;
   --roxo: #6223A2;
-  --degrade-botao: linear-gradient(180deg, var(--roxo) 25%, var(--azul) 75%);
+  --degrade-botao: linear-gradient(90deg, var(--roxo) 25%, var(--azul) 75%);
+  --degrade-fundo: linear-gradient(180deg, var(--roxo) 25%, var(--azul) 75%);
 
   --branco: hsl(0, 0%, 100%);
 

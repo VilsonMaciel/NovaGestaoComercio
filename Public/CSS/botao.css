@@ -25,9 +25,9 @@
         transform: scale(0.98);
     }
 }
-.botao--cancelar{
-
-}
 .botao--salvar{
-
+    background: #348C1E;
+}
+.botao--cancelar{
+    background: #8C271E;
 }
