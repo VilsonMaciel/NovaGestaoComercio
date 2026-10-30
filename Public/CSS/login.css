@@ -1,0 +1,114 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 74px);
+    padding: 40px 20px;
+}
+
+.login__card {
+    width: 100%;
+    max-width: 460px;
+    background: linear-gradient(135deg, hsl(268, 55%, 45%), hsl(240, 60%, 40%));
+    border-radius: 16px;
+    padding: 40px 44px 36px;
+    box-shadow: 0 8px 32px hsla(268, 60%, 30%, 0.35);
+}
+
+.login__titulo {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+}
+
+.login__campo {
+    margin-bottom: 20px;
+}
+
+.campo__label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--branco);
+    margin-bottom: 6px;
+}
+
+.campo__input {
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    font-family: "Overpass", sans-serif;
+    color: var(--cinza-texto);
+    background: var(--branco);
+    outline: none;
+    transition: var(--transition);
+}
+
+.campo__input:focus {
+    box-shadow: 0 0 0 3px hsla(0, 0%, 100%, 0.35);
+}
+
+.login__acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.login__botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: "Overpass", sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.login__botao--voltar {
+    background: hsl(0, 50%, 45%);
+    color: var(--branco);
+}
+
+.login__botao--voltar:hover {
+    background: hsl(0, 50%, 38%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px hsla(0, 50%, 45%, 0.35);
+}
+
+.login__botao--confirmar {
+    background: hsl(140, 45%, 32%);
+    color: var(--branco);
+}
+
+.login__botao--confirmar:hover {
+    background: hsl(140, 45%, 26%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px hsla(140, 45%, 32%, 0.35);
+}
+
+@media (max-width: 480px) {
+    .login__card {
+        padding: 32px 24px 28px;
+    }
+
+    .login__titulo {
+        font-size: 1.5rem;
+    }
+
+    .login__botao {
+        padding: 8px 18px;
+        font-size: 0.82rem;
+    }
+}
