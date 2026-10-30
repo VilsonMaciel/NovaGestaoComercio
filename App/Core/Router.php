@@ -19,7 +19,11 @@ class Router
     {
         $config = require __DIR__ . '/../../config/app.php';
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $uri = str_replace($config['base_folder'], '/', $uri);
+        $baseFolder = $config['base_folder'] ?? '/NovaGestaoComercio/';
+        $uri = str_ireplace($baseFolder, '/', $uri);
+        $uri = str_ireplace('/NovaGestaoComercio/', '/', $uri);
+        $uri = str_ireplace('/novagestao/', '/', $uri);
+        $uri = str_ireplace('/index.php', '', $uri);
         $method = $_SERVER['REQUEST_METHOD'];
 
         foreach ($this->routes as $route) {
