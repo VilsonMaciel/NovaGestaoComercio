@@ -51,28 +51,6 @@
             </form>
         </section>
     </main>
-
-    <script>
-        const btnUsuario = document.getElementById('btnUsuario');
-        const menuUsuario = document.getElementById('menuUsuario');
-
-        btnUsuario.addEventListener('click', function (e) {
-            e.stopPropagation();
-            menuUsuario.classList.toggle('usuario__menu--ativo');
-        });
-
-        document.addEventListener('click', function (e) {
-            if (!menuUsuario.contains(e.target) && !btnUsuario.contains(e.target)) {
-                menuUsuario.classList.remove('usuario__menu--ativo');
-            }
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                menuUsuario.classList.remove('usuario__menu--ativo');
-            }
-        });
-    </script>
 </body>
 
 </html>
