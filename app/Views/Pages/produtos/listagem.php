@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaGestão - Estoque</title>
 
-    <style>
-        <?php
-        $cssGlobal = __DIR__ . '/../../../../Public/CSS/global.css';
-        $cssListagem = __DIR__ . '/../../../../Public/CSS/produtos-listagem.css';
-
-        if (file_exists($cssGlobal)) {
-            include_once $cssGlobal;
-        }
-        if (file_exists($cssListagem)) {
-            include_once $cssListagem;
-        }
-        ?>
-    </style>
+    <link rel="stylesheet" href="<?= defined('BASE_URL') ? BASE_URL : '/NovaGestaoComercio' ?>/Public/CSS/global.css">
+    <link rel="stylesheet" href="<?= defined('BASE_URL') ? BASE_URL : '/NovaGestaoComercio' ?>/Public/CSS/produtos-listagem.css">
 </head>
 
 <body>
