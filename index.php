@@ -10,17 +10,17 @@ if (file_exists($composerAutoload)) {
 }
 
 spl_autoload_register(function ($class) {
-    $base_dir = __DIR__ . '/app/';
+    $base_dir = __DIR__ . '/App/';
     $file = $base_dir . str_replace('\\', '/', $class) . '.php';
     if (file_exists($file)) {
         require $file;
     }
 });
 
-$config = require __DIR__ . '/config/app.php';
+$config = require __DIR__ . '/Config/App.php';
 define('BASE_URL', $config['base_folder']);
 
 $router = new Core\Router();
-require_once __DIR__ . '/app/Routes/routes.php';
+require_once __DIR__ . '/App/Routes/routes.php';
 
 $router->dispatch();
