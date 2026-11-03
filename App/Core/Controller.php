@@ -8,6 +8,12 @@ class Controller
     {
         extract($data);
         $viewFile = __DIR__ . "/../Views/Pages/" . $name . ".php";
+
+        // Há telas legadas em "app/Views". O fallback mantém a aplicação
+        // funcional em sistemas que diferenciam maiúsculas de minúsculas.
+        if (!file_exists($viewFile)) {
+            $viewFile = __DIR__ . "/../../app/Views/Pages/" . $name . ".php";
+        }
         if (file_exists($viewFile)) {
             require $viewFile;
         } else {
