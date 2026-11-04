@@ -7,12 +7,35 @@ use Models\ProdutoModel;
 use PDOException;
 use Utils\AvisoUtil;
 use Utils\FormUtil;
+use Utils\ProdutoUtil;
 
 class ProdutoController extends Controller
 {
     public function listagem()
     {
+        $busca = trim((string) ($_GET['busca'] ?? ''));
+        $pagina = filter_var($_GET['pagina'] ?? 1, FILTER_VALIDATE_INT, [
+            'options' => ['min_range' => 1],
+        ]) ?: 1;
+        $porPagina = 10;
+
+        try {
+            $totalProdutos = ProdutoModel::contar($busca);
+            $totalPaginas = max(1, (int) ceil($totalProdutos / $porPagina));
+            $pagina = min($pagina, $totalPaginas);
+            $produtos = ProdutoModel::listar($busca, $porPagina, ($pagina - 1) * $porPagina);
+            $produtos = array_map([ProdutoUtil::class, 'prepararParaListagem'], $produtos);
+            $paginacao = $this->montarPaginacao($busca, $pagina, $totalPaginas);
+        } catch (PDOException $e) {
+            $produtos = [];
+            $paginacao = [];
+            AvisoUtil::erro('Não foi possível carregar os produtos. Tente novamente.');
+        }
+
         $this->view("produtos/listagem", [
+            'produtos' => $produtos,
+            'busca' => $busca,
+            'paginacao' => $paginacao,
             'avisos' => AvisoUtil::obterAviso(),
         ]);
     }
@@ -96,6 +119,39 @@ class ProdutoController extends Controller
     private function normalizarDecimal(mixed $valor): string
     {
         return str_replace(',', '.', trim((string) $valor));
+    }
+
+    private function montarPaginacao(string $busca, int $pagina, int $totalPaginas): array
+    {
+        if ($totalPaginas <= 1) {
+            return [];
+        }
+
+        $paginaInicial = max(1, $pagina - 2);
+        $paginaFinal = min($totalPaginas, $pagina + 2);
+        $paginas = [];
+
+        for ($numeroPagina = $paginaInicial; $numeroPagina <= $paginaFinal; $numeroPagina++) {
+            $paginas[] = [
+                'numero' => $numeroPagina,
+                'url' => $this->urlListagem($busca, $numeroPagina),
+                'atual' => $numeroPagina === $pagina,
+            ];
+        }
+
+        return [
+            'anterior' => $pagina > 1 ? $this->urlListagem($busca, $pagina - 1) : null,
+            'paginas' => $paginas,
+            'proxima' => $pagina < $totalPaginas ? $this->urlListagem($busca, $pagina + 1) : null,
+        ];
+    }
+
+    private function urlListagem(string $busca, int $pagina): string
+    {
+        return BASE_URL . 'produtos/listagem?' . http_build_query([
+            'busca' => $busca,
+            'pagina' => $pagina,
+        ]);
     }
 
     private function voltarComErros(array $dados, array $erros): void
