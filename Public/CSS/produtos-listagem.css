@@ -279,6 +279,31 @@
     font-size: 22px;
 }
 
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.paginacao a {
+    min-width: 36px;
+    padding: 8px 10px;
+    border: 1px solid var(--roxo-borda);
+    border-radius: 6px;
+    color: var(--roxo-medio);
+    font-weight: 600;
+    text-align: center;
+}
+
+.paginacao a:hover,
+.paginacao__pagina--ativa {
+    background: var(--roxo-botao);
+    border-color: var(--roxo-botao);
+    color: var(--branco) !important;
+}
+
 .tabela-container {
     border-radius: 10px;
     overflow: hidden;
