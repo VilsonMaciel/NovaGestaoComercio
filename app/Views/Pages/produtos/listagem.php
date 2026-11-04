@@ -48,6 +48,12 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
         <h1 class="pagina__titulo">Estoque</h1>
+        <?php foreach ($avisos['aviso_sucesso'] ?? [] as $aviso): ?>
+            <p role="status"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endforeach; ?>
+        <?php foreach ($avisos['aviso_erro'] ?? [] as $aviso): ?>
+            <p role="alert"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endforeach; ?>
 
         <!-- BARRA DE AÇÕES -->
         <section class="acoes">

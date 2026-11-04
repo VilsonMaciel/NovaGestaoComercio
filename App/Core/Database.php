@@ -12,9 +12,9 @@ class Database
 
     private function __construct()
     {
-        $config = require __DIR__ . '/../../config/app.php';
+        $config = require __DIR__ . '/../../Config/App.php';
         $dbConfig = $config['db'];
-        
+
         try {
             $dsn = "mysql:host={$dbConfig['host']};dbname={$dbConfig['dbname']};charset=utf8mb4";
             $this->connection = new PDO($dsn, $dbConfig['user'], $dbConfig['pass'], [
