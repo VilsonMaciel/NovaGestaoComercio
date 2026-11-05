@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaGestão - Estoque</title>
 
-    <link rel="stylesheet" href="<?= defined('BASE_URL') ? BASE_URL : '/NovaGestaoComercio' ?>/Public/CSS/global.css">
-    <link rel="stylesheet" href="<?= defined('BASE_URL') ? BASE_URL : '/NovaGestaoComercio' ?>/Public/CSS/produtos-listagem.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>Public/CSS/global.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>Public/CSS/produtos-listagem.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>home" class="navbar__logo">
+        <a href="<?= BASE_URL ?>home" class="navbar__logo">
             <span class="logo__n">N</span>ovaGestão
         </a>
 
@@ -20,11 +20,11 @@
                 <span class="material-symbols-outlined usuario__icone">person</span>
             </button>
             <div class="usuario__menu" id="menuUsuario">
-                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro" class="menu__item">
+                <a href="<?= BASE_URL ?>produtos/cadastro" class="menu__item">
                     <span class="material-symbols-outlined">add_box</span>
                     Novo Produto
                 </a>
-                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>relatorio/index" class="menu__item">
+                <a href="<?= BASE_URL ?>relatorio/index" class="menu__item">
                     <span class="material-symbols-outlined">description</span>
                     Gerar Relatório
                 </a>
@@ -34,6 +34,7 @@
                 </a>
                 <hr class="menu__divisor">
                 
+                    <a href="<?= BASE_URL ?>login" class="menu__item">
                     <span class="material-symbols-outlined">logout</span>
                     Sair
                 </a>
@@ -94,10 +95,10 @@
                 </div>
 
                 <div class="busca__acoes">
-                    <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro" class="botao botao--icone">
+                    <a href="<?= BASE_URL ?>produtos/cadastro" class="botao botao--icone">
                         Novo Produto
                     </a>
-                    <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>relatorio/index" class="botao botao--icone">
+                    <a href="<?= BASE_URL ?>relatorio/index" class="botao botao--icone">
                         Gerar Relatório
                     </a>
                 </div>
@@ -132,7 +133,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 11.016,20</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=1" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=1" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -153,7 +154,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 8.794,50</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=2" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=2" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -174,7 +175,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 19.797,80</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=3" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=3" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -195,7 +196,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 10.994,50</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=4" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=4" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -218,7 +219,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 8.598,00</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=5" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=5" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -239,7 +240,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 2.745,00</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=6" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=6" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
@@ -260,7 +261,7 @@
                         <td class="tabela__celula tabela__celula--direita tabela__celula--total">R$ 1.995,00</td>
                         <td class="tabela__celula tabela__celula--acoes">
                             <div class="tabela__acoes-wrapper">
-                                <a href="<?= defined('BASE_URL') ? BASE_URL : '/' ?>produtos/cadastro?id=7" class="botao botao--acao-tabela editar" title="Editar">
+                                <a href="<?= BASE_URL ?>produtos/cadastro?id=7" class="botao botao--acao-tabela editar" title="Editar">
                                     <span class="material-symbols-outlined">edit</span>
                                 </a>
                                 <button type="button" class="botao botao--acao-tabela remover acao__deletar" title="Excluir">
