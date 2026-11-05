@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&display=swap');
+
+@property --inline-size-s {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+@property --inline-size-m {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+@property --inline-size-l {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 100vi;
+}
+
+:root {
+  --azul: #23357A;
+  --roxo: #6223A2;
+  --degrade-botao: linear-gradient(90deg, var(--roxo) 25%, var(--azul) 75%);
+  --degrade-fundo: linear-gradient(180deg, var(--roxo) 25%, var(--azul) 75%);
+
+  --branco: hsl(0, 0%, 100%);
+
+  --transition: all 0.3s ease;
+
+  --breakpoint-s: 576px;
+  --inline-size-s: max(var(--breakpoint-s), 100vi);
+
+  --breakpoint-m: 768px;
+  --inline-size-m: max(var(--breakpoint-m), 100vi);
+
+  --breakpoint-l: 1200px;
+  --inline-size-l: max(var(--breakpoint-l), 100vi);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.avisos {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: grid;
+  gap: 10px;
+  width: min(380px, calc(100vw - 40px));
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: var(--branco);
+  box-shadow: 0 6px 18px hsla(0, 0%, 0%, 0.18);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.aviso--sucesso {
+  background: hsl(140, 48%, 30%);
+}
+
+.aviso--erro {
+  background: hsl(0, 58%, 42%);
+}
+
+.aviso--saindo {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.aviso__fechar {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}

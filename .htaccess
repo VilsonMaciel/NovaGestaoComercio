@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Arquivos da aplicação, configurações e artefatos de desenvolvimento não são públicos.
+RewriteRule ^(?:app|config|database|vendor|docs|\.git|\.aws|\.agents|\.codex)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:\.env(?:\..*)?|composer\.(?:json|lock|phar)|README(?:\.[^/]+)?|phpunit\.xml(?:\.dist)?|Dockerfile|docker-compose(?:\.[^/]+)?|.*\.(?:sql|md|log|bak))$ - [F,L,NC]
+
+# Files enviados são entregues somente pela rota autorizada arquivo/baixar.
+RewriteRule ^uploads(?:/|$) - [F,L]
+
+# Rewriting to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]

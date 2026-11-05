@@ -1,0 +1,159 @@
+.container {
+    background: var(--branco);
+    font-family: "Overpass", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-block: 32px;
+    overflow-y: auto;
+
+    .cadastro {
+        width: 80vw;
+        margin: 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        background: var(--degrade-fundo);
+        color: var(--branco);
+        border-radius: 42px;
+        overflow: visible;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+        .cadastro__cabecalho {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+
+            .cadastro__produto {
+                margin-top: 10px;
+                font-family: "Volkhov", sans-serif;
+                font-size: 3.5rem;
+                font-weight: 500;
+                font-style: italic;
+                letter-spacing: 1.5px;
+
+                @container style(--inline-size-m: var(--breakpoint-m)) {
+                    font-size: 1.8rem;
+                }
+            }
+
+        }
+
+        .cadastro__formulario {
+            display: flex;
+            flex-direction: column;
+            margin-inline: 33px;
+            margin-bottom: 30px;
+            gap: 20px;
+            height: max-content;
+
+            @container style(--inline-size-m: var(--breakpoint-m)) {
+                margin-inline: 24px;
+            }
+
+            .formulario__rodape {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                @container style(--inline-size-m: var(--breakpoint-m)) {
+                    justify-content: center;
+                    width: 100%;
+                }
+            }
+        }
+
+        .campo__input {
+            border-radius: 8px;
+            height: 40px;
+            width: 100%;
+            border: 1px solid rgb(206, 206, 206);
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.4);
+            padding-left: 6px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            outline: none;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+
+            &:focus {
+                border: 1px solid var(--azul);
+                background-color: #fafafa;
+            }
+
+            &:disabled {
+                background-color: #ececec
+            }
+
+        }
+
+        .campo--textarea {
+            padding: 10px;
+            height: auto;
+            resize: vertical;
+        }
+
+        .options-list {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            max-height: 200px;
+            overflow-y: auto;
+
+            & .option {
+                padding: 8px;
+                cursor: pointer;
+            }
+
+            & .option:hover {
+                background: #f0f0f0;
+            }
+
+            & .option.option--focada {
+                background-color: var(--azul);
+                outline: none;
+            }
+        }
+
+        textarea {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        .campo__etiqueta {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        select:invalid {
+            color: gray;
+        }
+
+        select option {
+            color: black;
+        }
+
+        .placeholder-style {
+            color: #666;
+        }
+
+    }
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .campo:has(.campo__input:required) .campo__etiqueta::after {
+        content: "*";
+        color: red;
+        font-weight: bold;
+    }
+
+}
