@@ -2,6 +2,7 @@
 
 $router->add('GET', '/login', 'LoginController@index');
 $router->add('GET', '/home', 'HomeController@index');
+$router->add('GET', '/cadastro_pessoa', 'Cadastro_pessoaController@index');
 
 $router->add('GET', '/produtos/listagem', 'ProdutoController@listagem');
 $router->add('GET', '/produtos/cadastro', 'ProdutoController@cadastro');
