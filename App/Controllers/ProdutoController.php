@@ -8,9 +8,16 @@ use PDOException;
 use Utils\AvisoUtil;
 use Utils\FormUtil;
 use Utils\ProdutoUtil;
+use Utils\SessionUtil;
 
 class ProdutoController extends Controller
 {
+    public function __construct()
+    {
+        SessionUtil::atualizarUsuarioAutenticado();
+        SessionUtil::validarCargo(['ADM', 'FUNCIONÁRIO']);
+    }
+
     public function listagem()
     {
         $busca = trim((string) ($_GET['busca'] ?? ''));

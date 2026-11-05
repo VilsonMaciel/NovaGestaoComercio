@@ -36,7 +36,7 @@
                     Cadastrar Usuário
                 </a>
                 <hr class="menu__divisor">
-                <a href="<?= BASE_URL ?>login" class="menu__item menu__item--sair">
+                <a href="<?= BASE_URL ?>logout" class="menu__item menu__item--sair">
                     <span class="material-symbols-outlined">logout</span>
                     Sair
                 </a>
@@ -46,12 +46,7 @@
 
     <main class="container">
         <h1 class="pagina__titulo">Estoque</h1>
-        <?php foreach ($avisos['aviso_sucesso'] ?? [] as $aviso): ?>
-            <p role="status"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
-        <?php endforeach; ?>
-        <?php foreach ($avisos['aviso_erro'] ?? [] as $aviso): ?>
-            <p role="alert"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
-        <?php endforeach; ?>
+        <?php include_once './App/Views/Components/avisos.php'; ?>
 
         <section class="acoes">
             <div class="acoes__esquerda">
@@ -145,6 +140,7 @@
     </main>
 
     <script>
+        <?php include_once './Public/JS/avisos.js'; ?>
         <?php include_once './Public/JS/produtos-listagem.js'; ?>
     </script>
 </body>

@@ -33,15 +33,17 @@
         <section class="login__card">
             <h1 class="login__titulo">Login</h1>
 
-            <form action="" method="POST">
+            <?php include_once './App/Views/Components/avisos.php'; ?>
+
+            <form action="<?= BASE_URL ?>login/autenticar" method="POST">
                 <div class="login__campo">
-                    <label for="usuario" class="campo__label">Usuário:</label>
-                    <input type="text" id="usuario" name="usuario" class="campo__input" required>
+                    <label for="email" class="campo__label">E-mail:</label>
+                    <input type="email" id="email" name="email" class="campo__input" value="<?= htmlspecialchars($dados['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" autocomplete="email" required>
                 </div>
 
                 <div class="login__campo">
                     <label for="senha" class="campo__label">Senha:</label>
-                    <input type="password" id="senha" name="senha" class="campo__input" required>
+                    <input type="password" id="senha" name="senha" class="campo__input" autocomplete="current-password" required>
                 </div>
 
                 <div class="login__acoes">
@@ -51,6 +53,9 @@
             </form>
         </section>
     </main>
+    <script>
+        <?php include_once './Public/JS/avisos.js'; ?>
+    </script>
 </body>
 </html>
 

@@ -1,6 +1,8 @@
 <?php
 
 $router->add('GET', '/login', 'LoginController@index');
+$router->add('POST', '/login/autenticar', 'LoginController@autenticar');
+$router->add('GET', '/logout', 'LoginController@logout');
 $router->add('GET', '/home', 'HomeController@index');
 
 $router->add('GET', '/produtos/listagem', 'ProdutoController@listagem');

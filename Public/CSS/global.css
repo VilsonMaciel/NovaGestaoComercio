@@ -51,3 +51,47 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.avisos {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: grid;
+  gap: 10px;
+  width: min(380px, calc(100vw - 40px));
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: var(--branco);
+  box-shadow: 0 6px 18px hsla(0, 0%, 0%, 0.18);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.aviso--sucesso {
+  background: hsl(140, 48%, 30%);
+}
+
+.aviso--erro {
+  background: hsl(0, 58%, 42%);
+}
+
+.aviso--saindo {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.aviso__fechar {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}

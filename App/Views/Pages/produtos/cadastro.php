@@ -21,12 +21,7 @@
             <header class="cadastro__cabecalho">
                 <h1 class="cadastro__produto">Produto</h1>
             </header>
-            <?php foreach ($avisos['aviso_sucesso'] ?? [] as $aviso): ?>
-                <p role="status"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
-            <?php endforeach; ?>
-            <?php foreach ($avisos['aviso_erro'] ?? [] as $aviso): ?>
-                <p role="alert"><?= htmlspecialchars($aviso, ENT_QUOTES, 'UTF-8') ?></p>
-            <?php endforeach; ?>
+            <?php include_once './App/Views/Components/avisos.php'; ?>
             <?php if (!empty($erros['geral'])): ?>
                 <p role="alert"><?= htmlspecialchars($erros['geral'], ENT_QUOTES, 'UTF-8') ?></p>
             <?php endif; ?>
@@ -88,8 +83,6 @@
         </main>
     </div>
     <script>
-        <?php
-
-        ?>
+        <?php include_once './Public/JS/avisos.js'; ?>
     </script>
 </body>

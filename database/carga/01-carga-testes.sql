@@ -1,7 +1,7 @@
-INSERT INTO usuario (senha, cargo) VALUES
-('hash_senha_adm123', 'ADM'),           -- ID 1
-('hash_senha_func123', 'FUNCIONARIO'), -- ID 2
-('hash_senha_func456', 'FUNCIONARIO'); -- ID 3
+INSERT INTO usuario (email, senha, cargo) VALUES
+('admin@novagestao.com', '$2y$10$3uB84Ouj4vJ9ahv5DpC9iOATztjCQkOR/6.VFcoJyw3e0QhzY17tG', 'ADM'),           -- ID 1
+('funcionario1@novagestao.com', '$2y$10$DGa0aUHw75wpAgwWR8Cy5uPYprqd9qou5pc8dGp/KeUW7hr29tKzC', 'FUNCIONÁRIO'), -- ID 2
+('funcionario2@novagestao.com', '$2y$10$8WGIV66A.aPkGSCAtc1duuO2ArJb1E1SAJS9qgCUrNMBVY772oDgC', 'FUNCIONÁRIO'); -- ID 3
 
 INSERT INTO pessoa (nome, data_nascimento, cpf, usuario_id) VALUES
 ('Carlos Eduardo Silva', '1988-05-14', '12345678901', 1),

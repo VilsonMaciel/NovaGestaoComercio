@@ -4,7 +4,8 @@ USE nova_gestao_db;
 
 CREATE TABLE IF NOT EXISTS usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    senha VARCHAR(255) DEFAULT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     cargo ENUM('ADM', 'FUNCIONÁRIO')
 );
 
